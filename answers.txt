@@ -1,0 +1,11 @@
+sort1 uses: Merge sort
+
+How do you know?: It's the quickest way to sort both random.txt and sorted.txt
+
+sort2 uses: Bubble sort
+
+How do you know?: It's not the quickest nor the slowest to sort both random.txt and sorted.txt
+
+sort3 uses: Selection sort
+
+How do you know?: It's the slowest algorithm to sort random.txt and sorted.txt
