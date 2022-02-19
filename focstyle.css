@@ -1,0 +1,17 @@
+header {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: black;
+    position: relative;
+    font-size: 50px;
+}
+
+main {
+    background-image: url("focaccia1.jpg");
+    background-color: Azure;
+    height: 600px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}

@@ -1,0 +1,9 @@
+header{
+    background-image: url("background.jpg");
+    background-color: Azure;
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
