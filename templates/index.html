@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    List of products
+{% endblock %}
+
+{% block main %}
+    {% for product in products %}
+    <div class="container">
+        <div class="product-name">{{ product["name"] }}</div>
+        <div class="expiring-date">{{ product["expiring_date"] }}</div>
+        <div class="quantity">{{ product["quantity"] }} {{ product["unit"] }}</div>
+    </div>
+    {% endfor %}
+{% endblock %}

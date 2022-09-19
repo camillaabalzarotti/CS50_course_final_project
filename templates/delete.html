@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Delete
+{% endblock %}
+
+{% block main %}
+    <form action="/delete" method="post">
+        <div>
+            <select autocomplete="off" autofocus class="form-control mx-auto w-auto" name="productName" class="product-name">
+                <option selected>Select a product</option>
+                {% for productName in productsNames %}
+                    <option>{{ productName["name"] }}</option>
+                {% endfor %}
+            </select>
+            <button class="btn btn-primary delete-button" type="submit">Select</button>
+        </div>
+    </form>
+    <div class="success-message">
+        {% if selected != None %}
+            You successfully deleted {{ selected }}
+        {% endif %}
+    </div>
+
+{% endblock %}
