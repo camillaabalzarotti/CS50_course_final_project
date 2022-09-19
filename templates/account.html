@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Account
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <div class="title">Account information:</div>
+        <div class="info"><strong>Username: </strong>{{ info["username"] }}</div>
+        <div class="info"><strong>Email: </strong>{{ info["email"] }}</div>
+        <div class="info"><strong>Password: </strong>{{ info["hash"] }}</div>
+    </div>
+    <div class="change title">Change: </div>
+    <form action="/account" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="newUsername" name="newUsername" placeholder="New username" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="newEmail" name="newEmail" placeholder="New email" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="newPassword" name="newPassword" placeholder="New password" type="password">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="confirmation" name="confirmation" placeholder="Confirm password" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Change</button>
+    </form>
+{% endblock %}

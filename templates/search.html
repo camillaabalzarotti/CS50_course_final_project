@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search for products
+{% endblock %}
+
+{% block main %}
+    <form action="/search" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="searched" name="searched" placeholder="Name of the product" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+    {% if compatibles %}
+        {% for product in compatibles %}
+        <div class="container">
+            <div class="product-name">{{ product[0]["name"] }}</div>
+            <div class="expiring-date">{{ product[0]["expiring_date"] }}</div>
+            <div class="quantity">{{ product[0]["quantity"] }} {{ product[0]["unit"] }}</div>
+        </div>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
