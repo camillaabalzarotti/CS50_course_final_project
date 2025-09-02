@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Change
+{% endblock %}
+
+{% block main %}
+    <form class="container" action="/change" method="post">
+        <div class="mb-3">
+            <select autocomplete="off" autofocus class="form-control mx-auto w-auto" name="productName" class="product-name">
+                <option selected>Select a product</option>
+                {% for productName in productsNames %}
+                    <option>{{ productName["name"] }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label>Expiring date:</label>
+            <input class="form-control mx-auto w-auto" id="expiringDate" name="expiringDate" type="date">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="quantity" name="quantity" placeholder="Quantity" type="number" min="1">
+        </div>
+        <div class="mb-3">
+            <select autocomplete="off" autofocus class="form-control mx-auto w-auto" id="unit" name="unit">
+                <option value=" ">Please choose a unit</option>
+                <option value="grams">gr</option>
+                <option value="kg">kg</option>
+                <option value="pound">lb</option>
+                <option value="ounce">oz</option>
+                <option value="portions">portions</option>
+                <option value="jar">jar</option>
+                <option value="can">can</option>
+                <option value="box">box</option>
+                <option value="bottle">bottle</option>
+                <option value="basket">basket</option>
+                <option value="carton">carton</option>
+            </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Change</button>
+    </form>
+    <div class="success-message">
+                {% if selected != None %}
+                    Infos about {{ selected }} successfully changed!
+                {% endif %}
+    </div>
+
+{% endblock %}
